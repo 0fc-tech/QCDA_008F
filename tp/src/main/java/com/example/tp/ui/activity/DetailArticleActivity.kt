@@ -35,6 +35,7 @@ class DetailArticleActivity : AppCompatActivity() {
                 "Le message est envoyé (frais estimés 50.65€)",
                 Snackbar.LENGTH_LONG).show()
         }
+
     }
 }
 
