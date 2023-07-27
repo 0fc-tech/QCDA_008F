@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_main"
+    app:startDestination="@id/articleViewFragment">
+
+    <fragment
+        android:id="@+id/articleViewFragment"
+        android:name="com.example.tp.ui.fragment.ArticleViewFragment"
+        android:label="ArticleViewFragment" >
+        <action
+            android:id="@+id/action_articleViewFragment_to_articleAddEditFragment"
+            app:destination="@id/articleAddEditFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/articleAddEditFragment"
+        android:name="com.example.tp.ui.fragment.ArticleAddEditFragment"
+        android:label="fragment_article_add_edit"
+        tools:layout="@layout/fragment_article_add_edit" >
+        <argument
+            android:name="article"
+            app:argType="com.example.tp.bo.Article" />
+    </fragment>
+</navigation>

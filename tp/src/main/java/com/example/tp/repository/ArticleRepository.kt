@@ -9,4 +9,8 @@ object ArticleRepository {
     fun getArticle(id: Long): Article?{
         return daoMemory.selectById(id)
     }
+
+    fun updateArticle(articleToUpdate: Article) {
+        daoMemory.update(articleToUpdate)
+    }
 }
