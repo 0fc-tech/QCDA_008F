@@ -10,7 +10,7 @@ class ArticleDaoMemoryImpl : ArticleDao {
                 "Ordinateur Dell",
                 "Ordinateur qui calcule",
                 850.0,
-                4,null,null,null
+                4,"https://www.dell.com/fr-fr/shop/ordinateurs-portables-et-2-en-1/ordinateur-portable-xps-15/spd/xps-15-9530-laptop/cn95304cc",null,null
             )
         )
     }
