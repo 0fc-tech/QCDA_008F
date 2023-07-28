@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation_main"
+    app:startDestination="@id/connexionFragment">
+
+    <fragment
+        android:id="@+id/connexionFragment"
+        android:name="com.example.bebereats.ConnexionFragment"
+        android:label="ConnexionFragment" >
+        <action
+            android:id="@+id/action_connexionFragment_to_commandeFragment"
+            app:destination="@id/commandeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/commandeFragment"
+        android:name="com.example.bebereats.CommandeFragment"
+        android:label="CommandeFragment" >
+        <action
+            android:id="@+id/action_commandeFragment_to_confirmationFragment"
+            app:destination="@id/confirmationFragment" />
+        <argument
+            android:name="pseudo"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/confirmationFragment"
+        android:name="com.example.bebereats.ConfirmationFragment"
+        android:label="ConfirmationFragment" >
+        <argument
+            android:name="pseudo"
+            app:argType="string" />
+        <argument
+            android:name="commande"
+            app:argType="string" />
+    </fragment>
+</navigation>

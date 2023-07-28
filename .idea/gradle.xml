@@ -11,6 +11,8 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/bebeareatcorrection" />
+            <option value="$PROJECT_DIR$/bebereats" />
             <option value="$PROJECT_DIR$/mod2demoform" />
             <option value="$PROJECT_DIR$/mod4findview" />
             <option value="$PROJECT_DIR$/mod5demonavigation" />
