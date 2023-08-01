@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="vm"
+            type="com.example.tplancerde.DiceVM" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".DiceActivity">
+
+        <Button
+            android:id="@+id/buttonDice12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12"
+            android:onClick="@{()->vm.launchDice(12)}"
+            app:layout_constraintBottom_toTopOf="@+id/buttonDice16"
+            app:layout_constraintEnd_toStartOf="@+id/buttonDice8"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonDice6" />
+
+        <TextView
+            android:id="@+id/textViewValueDice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(vm.dice)}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.25" />
+
+        <Button
+            android:id="@+id/buttonDice6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="6"
+            android:onClick="@{()->vm.launchDice(6)}"
+            app:layout_constraintBottom_toTopOf="@+id/buttonDice12"
+            app:layout_constraintEnd_toStartOf="@+id/buttonDice10"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewValueDice" />
+
+        <Button
+            android:id="@+id/buttonDice10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10"
+            android:onClick="@{()->vm.launchDice(10)}"
+
+            app:layout_constraintBottom_toTopOf="@+id/buttonDice8"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/buttonDice6"
+            app:layout_constraintTop_toBottomOf="@+id/textViewValueDice" />
+
+        <Button
+            android:id="@+id/buttonDice8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="8"
+            android:onClick="@{()->vm.launchDice(8)}"
+
+            app:layout_constraintBottom_toTopOf="@+id/buttonDice20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/buttonDice12"
+            app:layout_constraintTop_toBottomOf="@+id/buttonDice10" />
+
+        <Button
+            android:id="@+id/buttonDice16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="16"
+            android:onClick="@{()->vm.launchDice(16)}"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/buttonDice20"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonDice12" />
+
+        <Button
+            android:id="@+id/buttonDice20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="20"
+            android:onClick="@{()->vm.launchDice(20)}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/buttonDice16"
+            app:layout_constraintTop_toBottomOf="@+id/buttonDice8" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

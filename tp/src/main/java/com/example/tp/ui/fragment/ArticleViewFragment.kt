@@ -12,21 +12,24 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.tp.bo.Article
 import com.example.tp.databinding.FragmentArticleViewBinding
 import com.example.tp.repository.ArticleRepository
+import com.example.tp.ui.vm.ArticleViewViewModel
 import com.google.android.material.snackbar.Snackbar
 
 
 class ArticleViewFragment : Fragment() {
+    val vm by viewModels<ArticleViewViewModel>()
 
     val launcherPermission = registerForActivityResult(ActivityResultContracts.RequestPermission()){
         if(it){
             val intent = Intent(Intent.ACTION_SENDTO)
             intent.data = Uri.parse("sms:0612345678")
             intent.putExtra("sms_body", "Pour me faire un cadeau, tu peux m'offrir ça : " +
-                        "${binding.article?.intitule}.\n" +
+                        "${binding.vm?.article?.intitule}.\n" +
                         "    Cela ne coute que 85 euros et cela me fera vraiment plaisir :) Merci ! \n")
 
             startActivity(intent)
@@ -43,13 +46,13 @@ class ArticleViewFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.article = ArticleRepository.getArticle(0)
+        binding.vm = vm
         binding.imageButtonEdit.setOnClickListener {
             val builder: AlertDialog.Builder = AlertDialog.Builder(requireContext())
             builder.setMessage("Voulez-vous modifier cet article")
                 .setTitle("Edition article")
                 .setPositiveButton("Oui"){ _: DialogInterface, _: Int ->
-                    binding.article?.let{article->
+                    binding.vm?.article?.let{article->
                         ArticleViewFragmentDirections
                             .actionArticleViewFragmentToArticleAddEditFragment(article).also {destination->
                                 findNavController().navigate(destination)
@@ -61,9 +64,9 @@ class ArticleViewFragment : Fragment() {
             dialog.show()
         }
         binding.imageButtonUrl.setOnClickListener {
-            val intentToWeb = Intent(Intent.ACTION_VIEW, Uri.parse(binding.article?.url))
+            val intentToWeb = Intent(Intent.ACTION_VIEW, Uri.parse(binding.vm?.article?.url))
             startActivity(intentToWeb)
-            Toast.makeText(requireContext(), binding.article?.url ?: "Pas d'URL", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), binding.vm?.article?.url ?: "Pas d'URL", Toast.LENGTH_SHORT).show()
         }
         binding.imageButtonSend.setOnClickListener {
             launcherPermission.launch(Manifest.permission.SEND_SMS)
@@ -71,11 +74,6 @@ class ArticleViewFragment : Fragment() {
                 "Le message est envoyé (frais estimés 50.65€)",
                 Snackbar.LENGTH_LONG).show()
         }
-    }
-
-    override fun onResume() {
-        super.onResume()
-
     }
 
 }

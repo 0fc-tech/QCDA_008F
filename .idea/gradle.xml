@@ -17,7 +17,11 @@
             <option value="$PROJECT_DIR$/mod4findview" />
             <option value="$PROJECT_DIR$/mod5demonavigation" />
             <option value="$PROJECT_DIR$/mod6intent" />
+            <option value="$PROJECT_DIR$/mod7lifecycle" />
+            <option value="$PROJECT_DIR$/mod7savestate" />
+            <option value="$PROJECT_DIR$/mod8viewmodel" />
             <option value="$PROJECT_DIR$/tp" />
+            <option value="$PROJECT_DIR$/tplancerde" />
           </set>
         </option>
       </GradleProjectSettings>

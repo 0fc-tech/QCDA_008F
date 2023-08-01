@@ -5,8 +5,8 @@
 
     <data>
         <variable
-            name="article"
-            type="com.example.tp.bo.Article" />
+            name="vm"
+            type="com.example.tp.ui.vm.ArticleViewViewModel" />
 
     </data>
 
@@ -32,7 +32,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
-            android:text="@{article.intitule}"
+            android:text="@{vm.article.intitule}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewTitlePage" />
 
@@ -42,7 +42,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
-            android:text="@{article.description}"
+            android:text="@{vm.article.description}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewTitle" />
 
@@ -51,7 +51,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="@{String.valueOf(article.prix)}"
+            android:text="@{String.valueOf(vm.article.prix)}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
@@ -63,7 +63,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
-            android:text="@{String.valueOf(article.dataAchat)}"
+            android:text="@{String.valueOf(vm.article.dataAchat)}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewPrix" />
 
@@ -72,7 +72,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
-            android:checked="@={article.achete}"
+            android:checked="@={vm.article.achete}"
             android:text=""
             app:layout_constraintBottom_toBottomOf="@+id/textViewDateAchat"
             app:layout_constraintEnd_toEndOf="parent"
@@ -84,7 +84,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:max="8"
-            android:rating="@{article.niveau}"
+            android:rating="@{vm.article.niveau}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/checkBoxIsAchete" />
@@ -95,7 +95,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:text="@{article.url}"
+            android:text="@{vm.article.url}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ratingBarDegreEnvie" />
 
