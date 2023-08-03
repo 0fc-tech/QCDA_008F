@@ -13,13 +13,17 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/bebeareatcorrection" />
             <option value="$PROJECT_DIR$/bebereats" />
+            <option value="$PROJECT_DIR$/mod10recyclerview" />
+            <option value="$PROJECT_DIR$/mod12apirest" />
             <option value="$PROJECT_DIR$/mod2demoform" />
             <option value="$PROJECT_DIR$/mod4findview" />
             <option value="$PROJECT_DIR$/mod5demonavigation" />
+            <option value="$PROJECT_DIR$/mod5menu" />
             <option value="$PROJECT_DIR$/mod6intent" />
             <option value="$PROJECT_DIR$/mod7lifecycle" />
             <option value="$PROJECT_DIR$/mod7savestate" />
             <option value="$PROJECT_DIR$/mod8viewmodel" />
+            <option value="$PROJECT_DIR$/mod9room" />
             <option value="$PROJECT_DIR$/tp" />
             <option value="$PROJECT_DIR$/tplancerde" />
           </set>
